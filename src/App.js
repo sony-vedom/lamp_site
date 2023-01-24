@@ -37,7 +37,6 @@ const App = connect(mapStateToProps, {initializeApp})((props) => {
         ? <Preloader/>
         : <div className="app-wrapper" role={'main'}>
           <HeaderContainer/>
-          <Navbar/>
           <Suspense fallback={<Preloader/>}>
             <div className="app-wrapper-content">
               {routeResult}

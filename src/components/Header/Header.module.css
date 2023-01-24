@@ -1,33 +1,37 @@
-
 .header {
+    padding: 20px;
     grid-area: header;
-    background-color: rgba(96, 67, 68, 0.3);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    color: #E6DDC4;
 
+    color: #E6DDC4;
     box-sizing: border-box;
     width: 1420px;
+    height: 70px;
+    background-color: rgba(96, 67, 68, 0.3);
+    border-radius: 10px;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .header h1 {
     font-family: "Shalimar", serif;
+    color: #e5d7a0;
 }
 
+
 .header img {
-    margin-right: 0px;
-    margin-left: 50px;
     width: 60px;
     transform-origin: center;
     transform: rotate(90deg);
 }
 
-.LoginBlock {
-    margin: 20px;
-    margin-left: auto;
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
 }
+
 
 .LoginBlock a {
     color: white;

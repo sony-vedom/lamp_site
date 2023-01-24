@@ -10,6 +10,7 @@
     object-fit:cover;
     opacity: 0.8;
     border-radius: 10px;
+    padding-top: 20px;
 }
 
 .descriptionBlock {
@@ -19,19 +20,22 @@
     grid-template-columns: 350px 1fr;
     grid-gap: 10px;
     gap: 15px;
-    box-sizing: border-box;
 }
 
-.avatarArea {
+.mainProfileArea {
     background-color: rgba(96, 67, 68, 0.3);
     border-radius: 5%;
-    padding: 20px;
+
+}
+.avatar {
+    width: 270px;
+    border-radius: 50%;
+    border: 2px solid #E6DDC4;
+
 }
 
-.avatar {
-    padding: 5px;
-    width: 300px;
-    border-radius: 50%;
+.avatarContainer {
+    padding: 20px 35px;
 }
 
 .informationArea {

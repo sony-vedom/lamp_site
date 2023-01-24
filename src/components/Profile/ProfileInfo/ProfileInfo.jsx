@@ -2,16 +2,14 @@ import React, {useState} from "react";
 import styles from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus";
-import userPhoto from "../../../assets/image/user.png";
+import userPhoto from "../../../assets/image/user.png"
+import wallpaper from "../../../assets/image/wallpaper.jpg"
 import ProfileForm from "./ProfileDataForm";
 import {setStatus} from "../../../redux/profile-reducer";
 
 
 const ProfileInfo = ({profile, status, isOwner, updateStatus, savePhoto, saveProfile}) => {
     const [isEditMode, setEditMode] = useState(false);
-
-
-    // console.log((Array.from("Invalid url format (Contacts->Vk)"))[30].toLowerCase() + (Array.from("Invalid url format (Contacts->Vk)")).slice(31,-1))
 
     if (!profile) return <Preloader/>
 
@@ -38,11 +36,11 @@ const ProfileInfo = ({profile, status, isOwner, updateStatus, savePhoto, savePro
         <div className={styles.info}>
             <div className={styles.bigImage}>
                 <img className={styles.cover}
-                     src="https://oir.mobi/uploads/posts/2021-02/1612285651_6-p-lampovie-anime-art-9.jpg"/>
+                     src={wallpaper}/>
             </div>
             <section className={styles.descriptionBlock}>
-                <div className={styles.avatarArea}>
-                    <div>
+                <div className={styles.mainProfileArea}>
+                    <div className={styles.avatarContainer}>
                         <img src={profile.photos.large || userPhoto} className={styles.avatar}/>
                     </div>
                     <div>

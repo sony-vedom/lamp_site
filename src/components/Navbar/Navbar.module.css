@@ -1,12 +1,16 @@
 .nav {
     grid-area: nav;
-    padding: 20px;
+    width: 500px;
+
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.item {
+.nav a {
     color: #fff;
     text-decoration: none;
-    margin: 3px 0px;
 }
 
 .nav .active {
