@@ -1,0 +1,83 @@
+.dialogs {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    gap: 15px;
+}
+
+.dialogsItems {
+    padding: 10px;
+    background-color: rgba(96, 67, 68, 0.3);
+    border-radius: 10px;
+    height: 400px;
+    overflow-y: hidden;
+}
+
+.dialogsItems:hover {
+    overflow-y: auto;
+}
+
+.dialogsItems::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    background-color: rgba(96, 67, 68, 1);
+    border-radius: 20px;
+}
+
+.dialogsItems::-webkit-scrollbar-thumb {
+    background-color: rgb(90%, 87%, 77%, 0.5);;
+}
+
+.dialogItems a:first-child,
+.dialogItems a:first-child:hover {
+    margin-top: 0px;
+}
+
+.messages {
+    padding: 10px;
+    background-color: rgba(96, 67, 68, 0.3);
+    border-radius: 10px;
+    height: 800px;
+    padding: 0;
+}
+
+.newMessage {
+    padding: 10px;
+
+}
+
+.newMessage textarea {
+    background-color:  #2E2F42;
+    width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    height: 85px;
+    color: #E6DDC4;
+    font-family: inherit;
+    font-size: inherit;
+}
+.button {
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.button button {
+    background-color: #e1e3e6;
+    color: #222222;
+    font-size: 1em;
+    width: 120px;
+    height: 50px;
+    padding: 5px;
+    padding-top: 0;
+    border-color: #e1e3e6;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.button button:disabled {
+    background-color: #2b2a2a;
+    color: white;
+    border-color: gray;
+}

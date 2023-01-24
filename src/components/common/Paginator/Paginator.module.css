@@ -1,0 +1,40 @@
+.pagesContainer {
+    border-top: 1px solid transparent;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+
+.pagesContainer .list {
+    background-color: transparent;
+    border: 0 solid;
+    color: white;
+    font-size: 20px;
+    font-family: inherit;
+}
+
+.pagesContainer button.switch {
+    width: 70px;
+    height: 40px;
+    font-family: inherit;
+    background-color: transparent;
+    border: 0 solid;
+    color: white;
+}
+
+.pagesContainer button.switch:hover {
+    color: gold;
+}
+
+.active {
+    background-color: transparent;
+    border: 0 solid;
+    font-family: inherit;
+    color: gold;
+    font-size: 25px;
+}
+
+.list:hover {
+    color: gold;
+}
+

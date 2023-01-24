@@ -1,0 +1,38 @@
+.dialogItem a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 5px;
+    margin-top: 5px;
+}
+
+.dialogItem img {
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    margin: 5px;
+}
+
+.name {
+    color: #E6DDC4;
+    text-decoration: none;
+
+}
+
+
+.dialogItem a.active {
+    color: gold;
+    text-decoration: none;
+    background-color: rgba(96, 67, 68, 0.5);
+    width: 168px;
+
+}
+
+
+@media (hover: hover) {
+    .dialogItem a:hover {
+        color: gold;
+        background-color: rgba(96, 67, 68, 0.5);
+        width: 168px;
+    }
+}

@@ -1,0 +1,17 @@
+.login-form {
+    width: 400px;
+    display: grid;
+
+    row-gap: 20px;
+    justify-items: start;
+
+}
+
+.rememberMe-area {
+    display: flex;
+}
+
+.text-input {
+    width: 200px;
+    margin: 0 10px;
+}

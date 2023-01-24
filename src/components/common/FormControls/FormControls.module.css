@@ -1,0 +1,16 @@
+.form-control.error input,
+.form-control.error textarea {
+    border: 2px #f44336 solid;
+}
+
+.form-control.error p {
+    width: 500px;
+    color: #f44336;
+}
+
+.total-error {
+    font-style: italic;
+    padding: 5px;
+    color: #f44336;
+    margin: 5px;
+}

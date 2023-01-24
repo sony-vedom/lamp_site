@@ -1,0 +1,21 @@
+.nav {
+    grid-area: nav;
+    padding: 20px;
+}
+
+.item {
+    color: #fff;
+    text-decoration: none;
+    margin: 3px 0px;
+}
+
+.nav .active {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (hover: hover) {
+    .nav a:hover {
+        color: gold;
+    }
+}
