@@ -4,6 +4,7 @@ import userPhoto from "../../assets/image/user.png";
 import {NavLink} from "react-router-dom";
 
 const User = ({user, followingInProgress, unfollow, follow, ...props}) => {
+    debugger
     return (
         <div>
             <span>
