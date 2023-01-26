@@ -36,6 +36,10 @@
     border: 2px solid #E6DDC4;
 }
 
+.avatarButton {
+    cursor: pointer;
+}
+
 .avatar {
     margin-bottom: 13px;
 }
