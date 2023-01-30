@@ -1,6 +1,5 @@
 import React, {Suspense, useEffect} from "react";
 import './App.css';
-import Navbar from "./components/Navbar/Navbar";
 import {useRoutes} from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";

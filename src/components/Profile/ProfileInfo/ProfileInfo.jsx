@@ -9,7 +9,6 @@ import {Formik} from "formik";
 
 
 const ProfileInfo = ({profile, status, isOwner, updateStatus, savePhoto, saveProfile}) => {
-    debugger;
     const [isEditMode, setEditMode] = useState(false);
     if (!profile) return <Preloader/>
     const onMainPhotoSelected = (event) => {

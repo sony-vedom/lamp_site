@@ -24,7 +24,7 @@ export const ProfileData = ({profile, isOwner, onEditMode}) => {
 
         <div>
             <b>Contacts</b>: {Object.keys(profile.contacts)
-            .map(key => <div className={styles.contacts}><b>{key}</b>: {profile.contacts[key]}</div>)}
+            .map(key => <div key={key} className={styles.contacts}><b>{key}</b>: {profile.contacts[key]}</div>)}
         </div>
 
     </div>
