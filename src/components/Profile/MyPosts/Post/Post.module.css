@@ -1,24 +1,24 @@
 .item {
     background-color: rgba(96, 67, 68, 0.3);
-    margin: 10px;
-    margin-left: 0;
+    margin: 10px 10px 10px 0px;
     border-radius: 10px;
     display: grid;
-    grid-template-columns: 1fr 10fr;
+    grid-template-columns: 1fr 10fr 40px;
     box-sizing: border-box;
     width: 1175px;
+    padding-top: 10px;
 }
 
 .avatar {
     width: 70px;
-    margin: 5px;
+    margin: 0 5px 5px;
+    padding: 5px;
 }
 
 .avatar img {
     width: 70px;
     height: 70px;
     opacity: 0.5;
-    margin: 5px;
 }
 
 .message {
@@ -27,4 +27,9 @@
 
 .likes {
     margin: 10px;
+}
+
+.crossIcon {
+    width: 20px;
+    height: 20px;
 }
