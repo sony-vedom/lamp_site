@@ -2,34 +2,63 @@
     background-color: rgba(96, 67, 68, 0.3);
     margin: 10px 10px 10px 0px;
     border-radius: 10px;
-    display: grid;
-    grid-template-columns: 1fr 10fr 40px;
     box-sizing: border-box;
     width: 1175px;
-    padding-top: 10px;
+    padding: 10px;
+
+    display: grid;
+    grid-template-columns: 1fr 10fr 40px;
 }
 
 .avatar {
     width: 70px;
-    margin: 0 5px 5px;
+    margin: 0 0 5px 5px;
     padding: 5px;
+    z-index: 10;
 }
 
 .avatar img {
     width: 70px;
     height: 70px;
-    opacity: 0.5;
 }
 
 .message {
-    margin: 30px;
+
+    margin-right: 10px;
+    background-color: rgba(185, 170, 170, 0.1);
+    height: 100px;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    left: -45px;
+    top: 20px;
+    width: 1000px;
+
 }
 
 .likes {
     margin: 10px;
 }
 
+.crossButton {
+    background: transparent;
+    border: 0;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-right: 100px;
+    position: relative;
+    left: -35px;
+}
+
+
 .crossIcon {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
+    transition: 1s;
+
+}
+
+.crossIcon:hover {
+    transform: rotate(180deg);
 }

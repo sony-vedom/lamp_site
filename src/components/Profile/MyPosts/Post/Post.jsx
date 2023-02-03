@@ -11,9 +11,9 @@ const Post = (props) => {
             <p className={styles.message}>
                 {props.message}
             </p>
-            <div>
+            <button className={styles.crossButton}>
                 <img className={styles.crossIcon} src={crossIcon}/>
-            </div>
+            </button>
             <div className={styles.likes}>
                 like {props.count}
             </div>
