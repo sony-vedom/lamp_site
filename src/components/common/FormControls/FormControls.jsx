@@ -13,7 +13,7 @@ export const MyInput = ({label, className, errorComponent, ...props}) => {
     );
 }
 
-export const MyTextarea = ({label, className, errorComponent, totalClassName, ...props}) => {
+export const MyTextarea = ({label, className, errorComponent, totalClassName, errorStyle, ...props}) => {
     const [field, meta] = useField(props);
     const [isOnBlur, setIsOnBlur] = useState(true)
     return (
@@ -22,7 +22,7 @@ export const MyTextarea = ({label, className, errorComponent, totalClassName, ..
             <textarea onBlurCapture={() => setIsOnBlur(true)}
                       onFocus={() => setIsOnBlur(false)} className={className} {...field} {...props}/>
             {!isOnBlur || meta.error !== "Required" ? (
-                <div className={style["total-error"]}>{meta.error}</div>
+                <div className={style["total-error"] + " " + errorStyle}>{meta.error}</div>
             ) : null}
         </>
     );

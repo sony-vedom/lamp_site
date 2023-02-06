@@ -1,0 +1,74 @@
+.newPost {
+    width: 1175px;
+    background-color: rgba(96, 67, 68, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-areas:
+            "newPostTextArea newPostTextArea newPostTextArea"
+            "error clipButton addButton";
+    grid-template-columns: 1fr 1fr 120px;
+    gap: 10px;
+}
+
+.error {
+    grid-area: error;
+}
+
+.newPost textarea {
+    background-color: #2E2F42;
+    width: 1145px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    height: 85px;
+    color: #E6DDC4;
+    font-family: inherit;
+    font-size: inherit;
+
+    grid-area: newPostTextArea;
+
+}
+
+.button {
+    margin-right: 5px;
+    grid-area: addButton;
+}
+
+.button button {
+    background-color: #e1e3e6;
+    color: #222222;
+    font-size: 1em;
+    width: 120px;
+    height: 50px;
+    padding: 0 5px 5px;
+    border-color: #e1e3e6;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.button button:disabled {
+    background-color: #2b2a2a;
+    color: white;
+    border-color: #2b2a2a;
+}
+
+.posts {
+    margin-top: 30px;
+}
+
+.clipButton {
+    padding: 0;
+    width: 40px;
+    grid-area: clipButton;
+    justify-self: end;
+    color: #0c0c0c;
+    transition: 2s;
+}
+
+.clipButton:hover {
+    color: gold;
+    cursor: pointer;
+}

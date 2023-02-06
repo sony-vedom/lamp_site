@@ -53,7 +53,7 @@ const ProfileInfo = ({profile, status, isOwner, updateStatus, savePhoto, savePro
                                         </div>
                                     </label>
                                     <input id="avatar" name="avatar" type="file" onChange={onMainPhotoSelected}
-                                           value={formik.values.avatar} className={styles.avatarButtonInput}/>
+                                           value={formik.values.avatar} className="fileInput"/>
                                 </div>
                             )}
                         </Formik>}

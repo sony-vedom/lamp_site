@@ -9,7 +9,7 @@ import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/Dialogs'));
-const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
+const ProfileContainer = React.lazy(() => import('./components/Profile/Profile'));
 
 const mapStateToProps = (state) => ({
   initialized: state.app.initialized,

@@ -48,11 +48,6 @@
     margin: 20px 35px 0 35px;
 }
 
-.avatarButtonInput {
-    opacity: 0;
-    height: 1px;
-}
-
 .hoverBlock {
     border: 2px solid rgba(255, 215, 0, 0.74);
     opacity: 0;
