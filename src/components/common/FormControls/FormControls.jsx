@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {ErrorMessage, useField} from "formik";
 import style from "./FormControls.module.css";
 
 export const MyInput = ({label, className, errorComponent, ...props}) => {
-    const [field, meta, helpers] = useField(props)
+    const [field] = useField(props)
     return (
         <div>
             {label && <label htmlFor={props.id || props.name}>{label}</label>}

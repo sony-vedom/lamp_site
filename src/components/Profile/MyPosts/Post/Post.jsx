@@ -6,11 +6,11 @@ import {ReactComponent as LikesIcon} from "../../../../assets/image/heart.svg";
 import {ReactComponent as ReplyIcon} from "../../../../assets/image/reply.svg";
 import Reply from "../../ProfileInfo/Reply/Reply";
 
-const Post = (props) => {
+const Post = ({updateLikesCount, id, ...props}) => {
     const [isClick, setClick] = useState(false)
     const [likesCount, setLikesCount] = useState(props.count)
     useEffect(() => {
-        props.updateLikesCount(likesCount, props.id)
+        updateLikesCount(likesCount, id)
     }, [likesCount])
     return <>
         <div className={styles.item}>

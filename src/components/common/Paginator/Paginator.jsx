@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./Paginator.module.css";
-import Preloader from "../Preloader/Preloader";
 
 const Paginator = ({totalUserCount: totalItemCount, pageSize, onPagedChanged, portionSize = 15, currentPage, ...props}) => {
     const pagesCount = Math.ceil(totalItemCount / pageSize);
@@ -14,7 +13,7 @@ const Paginator = ({totalUserCount: totalItemCount, pageSize, onPagedChanged, po
     const rightPageNumber = portionNumber * portionSize;
     useEffect(()=>{
         setPortionNumber(Math.ceil(currentPage/portionSize))
-        }, [currentPage]);
+        }, [currentPage, portionSize]);
     return (
         <div className={styles.pagesContainer}>
 

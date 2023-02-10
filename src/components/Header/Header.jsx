@@ -8,7 +8,7 @@ const Header = (props) => {
         <header className={styles.header}>
             <div className={styles.logo}>
                 <div>
-                    <img src="https://www.pngmart.com/files/1/Light-Bulb-PNG-Transparent-Image.png"/>
+                    <img src="https://www.pngmart.com/files/1/Light-Bulb-PNG-Transparent-Image.png" alt="logo"/>
                 </div>
                 <h1>Lamp Site</h1>
             </div>

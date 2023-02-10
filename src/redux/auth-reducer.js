@@ -1,6 +1,5 @@
 import {authAPI, securityAPI} from "../api/api";
-// import {formik} from "redux-form";
-import {Formik} from "formik";
+
 
 const SET_USER_DATA = "samurai-network/auth/SET_USER_DATA";
 const GET_CAPTCHA_URL_SUCCESS = "samurai-network/auth/GET_CAPTCHA_URL_SUCCESS";

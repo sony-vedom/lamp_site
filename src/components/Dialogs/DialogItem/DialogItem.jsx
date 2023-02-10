@@ -12,7 +12,7 @@ const DialogItem = (props) => {
     return (
         <div className={styles.dialogItem}>
             <NavLink to={path} className={DialogItem.checkedLink()}>
-                <img src="https://www.pngarts.com/files/11/Avatar-PNG-Free-Download.png"/>
+                <img src="https://www.pngarts.com/files/11/Avatar-PNG-Free-Download.png" alt="avatar"/>
                 {props.name}
             </NavLink>
         </div>

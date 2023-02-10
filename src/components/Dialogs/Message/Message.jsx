@@ -4,7 +4,7 @@ import styles from "./Message.module.css";
 const Message = (props) => {
     return (
         <div className={styles.message}>
-            <img src="https://www.pngarts.com/files/11/Avatar-PNG-Free-Download.png"/>
+            <img src="https://www.pngarts.com/files/11/Avatar-PNG-Free-Download.png" alt="avatar"/>
             {props.message}
         </div>
     )

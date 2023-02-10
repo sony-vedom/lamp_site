@@ -32,13 +32,13 @@ const ProfileInfo = ({profile, status, isOwner, updateStatus, savePhoto, savePro
     return (
         <div className={styles.info}>
             <section className={styles.bigImage}>
-                <img className={styles.cover} src={wallpaper}/>
+                <img className={styles.cover} src={wallpaper} alt="wallpaper"/>
             </section>
             <section className={styles.descriptionBlock}>
                 <div className={styles.avatarArea}>
                     {!isOwner
                         ? <div className={styles.avatarContainer}>
-                            <img src={profile.photos.small || userPhoto} className={styles.avatar}/></div>
+                            <img src={profile.photos.small || userPhoto} className={styles.avatar} alt="avatar"/></div>
                         : <Formik initialValues={{avatar: ""}}>
                             {formik => (<div>
                                     <label htmlFor="avatar">

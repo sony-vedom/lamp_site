@@ -2,7 +2,6 @@ import React from "react"
 import {Formik} from "formik"
 import {connect} from "react-redux"
 import {login} from "../../redux/auth-reducer"
-import {Navigate} from "react-router-dom"
 import * as Yup from 'yup'
 import style from "../common/FormControls/FormControls.module.css"
 import styles from "./Login.module.css"

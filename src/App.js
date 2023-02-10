@@ -1,4 +1,4 @@
-import React, {Suspense, useEffect} from "react";
+import React, {Suspense} from "react";
 import './App.css';
 import {useRoutes} from "react-router-dom";
 import UsersContainer from "./components/Users/Users";

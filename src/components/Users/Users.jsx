@@ -17,7 +17,7 @@ import Preloader from "../common/Preloader/Preloader";
 const Users = (props) => {
     useEffect(() => {
         props.requestUsers(props.currentPage, props.pageSize)
-    }, [])
+    }, [props])
 
     const onPagedChanged = (pageNumber) => {
         props.requestUsers(pageNumber)
