@@ -9,9 +9,9 @@ import styles from "./Login.module.css"
 import {MyInput} from "../common/FormControls/FormControls"
 
 const Login = (props) => {
-    if (props.isAuth) {
-        return <Navigate to={`/profile/${props.userId}`}/>
-    }
+    // if (props.isAuth) {
+    //     return <Navigate to={`/profile/${props.userId}`}/>
+    // }
     const schema = Yup.object({
         email: Yup.string().required('Required'),
         password: Yup.string().required('Required'),

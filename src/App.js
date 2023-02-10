@@ -25,14 +25,14 @@ const App = connect(mapStateToProps, {initializeApp})((props) => {
     {path: "/", element: <Login/>},
     {path: "*", element: <div>404 Not Found</div>},
   ])
-  useEffect(() => {
-    props.initializeApp()
-  }, [])
-
-  if (!props.initialized) return <Preloader/>
+  // useEffect(() => {
+  //   props.initializeApp()
+  // }, [])
+  //
+  // if (!props.initialized) return <Preloader/>
 
   return <>
-    {(!props.initialized)
+    {/*{(!props.initialized)*/}
         ? <Preloader/>
         : <div className="app-wrapper" role={'main'}>
           <HeaderContainer/>
