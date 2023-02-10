@@ -38,12 +38,12 @@
     border: 0;
     cursor: pointer;
     height: 22px;
+    font-size: 12px;
 }
 
 
 .likes {
     margin-left: 10px;
-
     display: flex;
 }
 
@@ -67,6 +67,10 @@
     color: gold;
 }
 
+.likesCount {
+
+}
+
 .replyButton {
     width: 50px;
     height: 22px;
@@ -75,14 +79,15 @@
     background-color: transparent;
     border: 0;
     cursor: inherit;
+
 }
 
 .replyArea {
     cursor: pointer;
     color: white;
     height: 22px;
-    margin-bottom: 5px;
     transition: 1s;
+    padding-bottom: 3px;
 }
 
 .replyArea:hover {

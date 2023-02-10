@@ -1,7 +1,7 @@
 import React, {Suspense, useEffect} from "react";
 import './App.css';
 import {useRoutes} from "react-router-dom";
-import UsersContainer from "./components/Users/UsersContainer";
+import UsersContainer from "./components/Users/Users";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import {connect} from "react-redux";
