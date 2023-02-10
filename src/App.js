@@ -33,8 +33,8 @@ const App = connect(mapStateToProps, {initializeApp})((props) => {
 
   return <>
     {/*{(!props.initialized)*/}
-        ? <Preloader/>
-        : <div className="app-wrapper" role={'main'}>
+    {/*    ? <Preloader/>*/}
+        <div className="app-wrapper" role={'main'}>
           <HeaderContainer/>
           <Suspense fallback={<Preloader/>}>
             <div className="app-wrapper-content">
