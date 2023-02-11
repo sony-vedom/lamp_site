@@ -48,9 +48,9 @@ export const onSubmitLogin = (e) => {
     //     // // The AuthCredential type that was used.
     //     // const credential = GoogleAuthProvider.credentialFromError(error);
     //     // // ...
-
-        console.log(error)
-    });
+    //
+    //     console.log(error)
+    // });
 }
 
 
