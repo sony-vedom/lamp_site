@@ -1,6 +1,9 @@
-import { initializeApp } from "firebase/app";
+import {initializeApp} from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore";
+import {getFirestore} from "firebase/firestore";
+import {getAuth, signInWithRedirect} from "firebase/auth";
+import {getRedirectResult, GoogleAuthProvider} from "firebase/auth"
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCdSrPaDIKTID2j4gI9cOnGCmTfDN27-pM",
@@ -13,7 +16,37 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
 const analytics = getAnalytics(app);
 export const db = getFirestore(app);
+
+export const provider = new GoogleAuthProvider();
+export const auth = getAuth();
+signInWithRedirect(auth, provider);
+
+export const onSumbitLogin = (e) => {
+    getRedirectResult(auth).then((result) => {
+        // This gives you a Google Access Token. You can use it to access Google APIs.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+
+        // The signed-in user info.
+        const user = result.user;
+        console.log(user)
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+    }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        console.log(errorCode)
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+    });
+}
+
 
 export default app;

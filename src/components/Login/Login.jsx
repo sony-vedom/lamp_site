@@ -6,11 +6,16 @@ import * as Yup from 'yup'
 import style from "../common/FormControls/FormControls.module.css"
 import styles from "./Login.module.css"
 import {MyInput} from "../common/FormControls/FormControls"
+ import { onSumbitLogin} from "../../firebase";
+
 
 const Login = (props) => {
     // if (props.isAuth) {
     //     return <Navigate to={`/profile/${props.userId}`}/>
     // }
+
+
+
     const schema = Yup.object({
         email: Yup.string().required('Required'),
         password: Yup.string().required('Required'),
@@ -18,11 +23,18 @@ const Login = (props) => {
 
     return <>
         <h1>Login</h1>
+        <label>
+            Вход в гугл
+        <input/>
+            <button onSubmit={onSumbitLogin}>
+                add
+            </button>
+        </label>
         <Formik
             initialValues={{email: "", password: "", rememberMe: "", captcha: ""}}
             onSubmit={(formData, actions) => {
                 setTimeout(() => {
-                    props.login(formData.email, formData.password, !!formData.rememberMe, formData.captcha, actions.setStatus)
+                    // props.login(formData.email, formData.password, !!formData.rememberMe, formData.captcha, actions.setStatus)
                     actions.resetForm()
                 }, 0);
             }}
