@@ -24,9 +24,7 @@ const Login = (props) => {
         <h1>Login</h1>
 
         <Formik initialValues={{text: ""}}
-                onSubmit={(formData, actions) => {
-                    setTimeout(onSubmitLogin, 0);
-                }}>
+                onSubmit={onSubmitLogin}>
             {formik => <form onSubmit={formik.handleSubmit} className={styles["login-form"]}>
                 <MyInput label={"вход в гугл"} placeholder={"text"}
                          name="text" type="text" errorComponent={"span"}/>

@@ -1,8 +1,8 @@
 import {initializeApp} from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import {getAnalytics} from "firebase/analytics";
 import {getFirestore} from "firebase/firestore";
 import {getAuth, signInWithRedirect} from "firebase/auth";
-import {getRedirectResult, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import {getRedirectResult, GoogleAuthProvider, signInWithPopup} from "firebase/auth"
 
 
 const firebaseConfig = {
@@ -23,22 +23,18 @@ export const db = getFirestore(app);
 export const provider = new GoogleAuthProvider();
 export const auth = getAuth();
 
-export const onSubmitLogin = (e) => {
-    signInWithRedirect(auth, provider);
-    getRedirectResult(auth)
-        .then((result) => {
-            // This gives you a Google Access Token. You can use it to access Google APIs.
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
+export const onSubmitLogin = async (e) => {
+    debugger
+    const auth = await getAuth();
+    await signInWithRedirect(auth, provider);
+    const result = await getRedirectResult(auth)
+    const credential = await GoogleAuthProvider.credentialFromResult(result);
+    // const token = await credential.accessToken;
+    const user = await result.user;
+    console.log(result)
+    console.log(credential)
+    // await console.log(token)
 
-            // The signed-in user info.
-            const user = result.user;
-            // IdP data available using getAdditionalUserInfo(result)
-            // ...
-            console.log(result)
-            console.log(credential)
-            console.log(token)
-        })
 
     // getRedirectResult(auth).then((result) => {
     //     // // This gives you a Google Access Token. You can use it to access Google APIs.
