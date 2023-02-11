@@ -6,7 +6,7 @@ import * as Yup from 'yup'
 import style from "../common/FormControls/FormControls.module.css"
 import styles from "./Login.module.css"
 import {MyInput} from "../common/FormControls/FormControls"
- import { onSumbitLogin} from "../../firebase";
+ import { onSubmitLogin} from "../../firebase";
 
 
 const Login = (props) => {
@@ -26,7 +26,7 @@ const Login = (props) => {
         <label>
             Вход в гугл
         <input/>
-            <button onSubmit={onSumbitLogin}>
+            <button onSubmit={onSubmitLogin}>
                 add
             </button>
         </label>
