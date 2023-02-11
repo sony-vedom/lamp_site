@@ -24,18 +24,20 @@ export const provider = new GoogleAuthProvider();
 export const auth = getAuth();
 
 export const onSubmitLogin = (e) => {
-    signInWithPopup(auth, provider).then((result) => {
-        // // This gives you a Google Access Token. You can use it to access Google APIs.
-        // const credential = GoogleAuthProvider.credentialFromResult(result);
-        // const token = credential.accessToken;
-        //
-        // // The signed-in user info.
-        const user = result.user;
-        console.log(user)
-        // // IdP data available using getAdditionalUserInfo(result)
-        // // ...
+    signInWithRedirect(auth, provider).then(result => console.log(result));
 
-        console.log(result)
+    // getRedirectResult(auth).then((result) => {
+    //     // // This gives you a Google Access Token. You can use it to access Google APIs.
+    //     // const credential = GoogleAuthProvider.credentialFromResult(result);
+    //     // const token = credential.accessToken;
+    //     //
+    //     // // The signed-in user info.
+    //     const user = result.user;
+    //     console.log(user)
+    //     // // IdP data available using getAdditionalUserInfo(result)
+    //     // // ...
+    //
+    //     console.log(result)
     }).catch((error) => {
         // // Handle Errors here.
         const errorCode = error.code;
