@@ -1,5 +1,5 @@
 {
-  "name": "lamp_site",
+  "name": "lamp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -56,6 +56,6 @@
   "bugs": {
     "url": "https://github.com/sony-vedom/lamp_site/issues"
   },
-  "homepage": "https://github.com/sony-vedom/lamp_site#readme",
+  "homepage": "",
   "devDependencies": {}
 }
