@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {Formik} from "formik"
 import {connect} from "react-redux"
 import {login} from "../../redux/auth-reducer"
@@ -6,7 +6,8 @@ import * as Yup from 'yup'
 import style from "../common/FormControls/FormControls.module.css"
 import styles from "./Login.module.css"
 import {MyInput} from "../common/FormControls/FormControls"
-import {onSubmitLogin} from "../../firebase";
+import {auth, onSubmitLogin} from "../../firebase";
+import {getAuth, getRedirectResult, GoogleAuthProvider} from "firebase/auth";
 
 
 const Login = (props) => {
@@ -18,6 +19,20 @@ const Login = (props) => {
     const schema = Yup.object({
         email: Yup.string().required('Required'),
         password: Yup.string().required('Required'),
+    })
+
+    useEffect(() => {
+        const auth = getAuth();
+        getRedirectResult(auth)
+            .then((result) => {
+                if (result) {
+                    // This gives you a Google Access Token. You can use it to access Google APIs.
+                    GoogleAuthProvider.credentialFromResult(result)
+                    console.log(result)
+                    const user = result.user;
+                    console.log(user)
+                }
+            })
     })
 
     return <>
