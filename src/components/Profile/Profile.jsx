@@ -17,6 +17,8 @@ import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = (props) => {
     const {id} = useParams() // возвращает объект параметров маршрута, слева тупо деструктуризация
+
+
     // const navigate = useNavigate()
     // useEffect(() => {
     //     if (id) {
@@ -51,5 +53,5 @@ const mapStateToProps = (state) => ({
 
 export default compose(
     connect(mapStateToProps, {getProfile, getStatus, updateStatus, savePhoto, saveProfile, updateLikesCount}),
-    withAuthRedirect,
+    // withAuthRedirect,
 )(Profile);

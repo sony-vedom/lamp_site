@@ -24,7 +24,7 @@ const App = connect(mapStateToProps, {initializeApp})((props) => {
         {path: "/dialogs/*", element: <DialogsContainer/>},
         {path: "/users", element: <UsersContainer/>,},
         {path: "/login", element: <Login/>},
-        {path: "/", element: <Login/>},
+        {path: "/", element: <ProfileContainer/>},
         {path: "*", element: <div>404 Not Found</div>},
     ])
     // useEffect(() => {

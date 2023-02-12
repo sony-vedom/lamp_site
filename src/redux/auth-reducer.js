@@ -1,36 +1,44 @@
 import {authAPI, securityAPI} from "../api/api";
 
 
-const SET_USER_DATA = "samurai-network/auth/SET_USER_DATA";
+const SET_USER_DATA = "SET_USER_DATA";
 const GET_CAPTCHA_URL_SUCCESS = "samurai-network/auth/GET_CAPTCHA_URL_SUCCESS";
 
 let initialState = {
     userId: null,
-    login: null,
     email: null,
+    name: null,
     isAuth: false,
-    captchaUrl: null,
+    // captchaUrl: null,
 }
 
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
+
         case SET_USER_DATA:
-        case GET_CAPTCHA_URL_SUCCESS:
             return {
                 ...state,
                 ...action.payload,
             }
+
         default:
             return state
     }
 }
 
+
 //Action Creators
 
-export const setAuthUserData = (userId, email, login, isAuth) => ({
-    type: SET_USER_DATA,
-    payload: {userId, email, login, isAuth}
-})
+
+export const setAuthUserData = (userId, email, name, isAuth) => {
+
+    return {
+        type: SET_USER_DATA,
+        payload: {userId, email, name, isAuth}
+    }
+}
+
+// console.log(authReducer(initialState, setAuthUserData(1, 2, "f", true)))
 
 export const getCaptchaUrlSuccess = (captchaUrl) => ({
     type: GET_CAPTCHA_URL_SUCCESS,

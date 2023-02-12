@@ -1,49 +1,41 @@
-import React, {useEffect} from "react"
+import React from "react"
 import {Formik} from "formik"
 import {connect} from "react-redux"
-import {login} from "../../redux/auth-reducer"
+import {setAuthUserData} from "../../redux/auth-reducer"
 import * as Yup from 'yup'
-import style from "../common/FormControls/FormControls.module.css"
 import styles from "./Login.module.css"
 import {MyInput} from "../common/FormControls/FormControls"
-import {auth, onSubmitLogin} from "../../firebase";
-import {getAuth, getRedirectResult, GoogleAuthProvider} from "firebase/auth";
+import authentication from "../../firebase/authentication";
+import {Navigate} from "react-router-dom";
+import {onAuthStateChanged} from "firebase/auth";
 
 
 const Login = (props) => {
-    // if (props.isAuth) {
-    //     return <Navigate to={`/profile/${props.userId}`}/>
-    // }
-
 
     const schema = Yup.object({
         email: Yup.string().required('Required'),
         password: Yup.string().required('Required'),
     })
 
-    useEffect(() => {
-        const auth = getAuth();
-        getRedirectResult(auth)
-            .then((result) => {
-                if (result) {
-                    // This gives you a Google Access Token. You can use it to access Google APIs.
-                    GoogleAuthProvider.credentialFromResult(result)
-                    console.log(result)
-                    const user = result.user;
-                    console.log(user)
-                }
-            })
+    onAuthStateChanged(authentication.auth, (user) => {
+        if (user) {
+            props.setAuthUserData(user.uid, user.email, user.displayName, true)
+
+        }
     })
+    if (props.userId) {
+        return <Navigate to={`/profile/${props.userId}`}/>
+    }
+
 
     return <>
         <h1>Login</h1>
 
         <Formik initialValues={{text: ""}}
-                onSubmit={onSubmitLogin}>
+                onSubmit={authentication.onSubmitLogin}>
             {formik => <form onSubmit={formik.handleSubmit} className={styles["login-form"]}>
-                <MyInput label={"вход в гугл"} placeholder={"text"}
-                         name="text" type="text" errorComponent={"span"}/>
-                <button type="submit">add</button>
+                <MyInput value="Sing with google" placeholder={"text"}
+                         name="text" type="submit" errorComponent={"span"}/>
             </form>}
         </Formik>
         {/*<Formik*/}
@@ -85,10 +77,11 @@ const Login = (props) => {
     </>
 }
 
-const mapStateToProps = (state) => ({
-    captchaUrl: state.auth.captchaUrl,
-    isAuth: state.auth.isAuth,
-    userId: state.auth.userId,
-})
+const mapStateToProps = (state) => {
+    return {
+        isAuth: state.auth.isAuth,
+        userId: state.auth.userId,
+    }
+}
 
-export default connect(mapStateToProps, {login})(Login);
+export default connect(mapStateToProps, {setAuthUserData})(Login);
