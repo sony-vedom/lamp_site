@@ -12,6 +12,7 @@ import {onAuthStateChanged} from "firebase/auth";
 
 const Login = (props) => {
 
+
     const schema = Yup.object({
         email: Yup.string().required('Required'),
         password: Yup.string().required('Required'),
@@ -23,6 +24,7 @@ const Login = (props) => {
             props.setAuthUserData(user.uid, user.email, user.displayName, true)
         }
     })
+
 
     if (props.userId) {
         return <Navigate to={`/profile/${props.userId}`}/>

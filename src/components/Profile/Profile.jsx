@@ -53,5 +53,5 @@ const mapStateToProps = (state) => ({
 
 export default compose(
     connect(mapStateToProps, {getProfile, getStatus, updateStatus, savePhoto, saveProfile, updateLikesCount}),
-    // withAuthRedirect,
+    withAuthRedirect,
 )(Profile);

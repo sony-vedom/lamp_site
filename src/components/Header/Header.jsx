@@ -5,13 +5,18 @@ import Navbar from "../Navbar/Navbar";
 import lampIcon from "../../assets/image/lampIcon.png"
 import authentication from "../../firebaseUtils/authentication";
 import {connect} from "react-redux";
+import {setAuthUserData} from "../../redux/auth-reducer"
 import {logout} from "../../redux/auth-reducer";
 
 
 const Header = (props) => {
-    const logout = authentication.mySingOut().then(() => {
-        return <Navigate to="/login"/>
-    })
+    const logout = () => {
+        return authentication.mySingOut()
+            .then(() => {
+                props.setAuthUserData("", "", "", false)
+            }
+        )
+    }
     return (
         <header className={styles.header}>
             <a className={styles.logo}>
@@ -23,7 +28,9 @@ const Header = (props) => {
             <Navbar userId={(props.userId) ? props.userId : null}/>
             <div className={styles.LoginBlock}>
                 {props.isAuth
-                    ? <div>{props.login}<button onClick={() => logout}>Log out</button></div>
+                    ? <div>{props.login}
+                        <button onClick={logout}>Log out</button>
+                    </div>
                     : <NavLink to={"/login"}>Login</NavLink>
                 }
             </div>
@@ -37,4 +44,4 @@ const mapStateToProps = (state) => ({
     userId: state.auth.userId,
 })
 
-export default connect(mapStateToProps, {logout})(Header);
+export default connect(mapStateToProps, {setAuthUserData})(Header);
