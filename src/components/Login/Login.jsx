@@ -1,11 +1,11 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {Formik} from "formik"
 import {connect} from "react-redux"
 import {setAuthUserData} from "../../redux/auth-reducer"
 import * as Yup from 'yup'
 import styles from "./Login.module.css"
 import {MyInput} from "../common/FormControls/FormControls"
-import authentication from "../../firebase/authentication";
+import authentication from "../../firebaseUtils/authentication";
 import {Navigate} from "react-router-dom";
 import {onAuthStateChanged} from "firebase/auth";
 
@@ -18,21 +18,21 @@ const Login = (props) => {
     })
 
     onAuthStateChanged(authentication.auth, (user) => {
+
         if (user) {
             props.setAuthUserData(user.uid, user.email, user.displayName, true)
-
         }
     })
+
     if (props.userId) {
         return <Navigate to={`/profile/${props.userId}`}/>
     }
-
 
     return <>
         <h1>Login</h1>
 
         <Formik initialValues={{text: ""}}
-                onSubmit={authentication.onSubmitLogin}>
+                onSubmit={authentication.onSubmitLogin()}>
             {formik => <form onSubmit={formik.handleSubmit} className={styles["login-form"]}>
                 <MyInput value="Sing with google" placeholder={"text"}
                          name="text" type="submit" errorComponent={"span"}/>

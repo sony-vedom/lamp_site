@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {
     getProfile,
@@ -8,7 +8,7 @@ import {
     updateLikesCount,
     updateStatus
 } from "../../redux/profile-reducer";
-import {useParams} from "react-router-dom";
+import {useParams, useNavigate} from "react-router-dom";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
@@ -19,19 +19,19 @@ const Profile = (props) => {
     const {id} = useParams() // возвращает объект параметров маршрута, слева тупо деструктуризация
 
 
-    // const navigate = useNavigate()
-    // useEffect(() => {
-    //     if (id) {
-    //         props.getProfile(id)
-    //         props.getStatus(id)
-    //     }
-    //     if (!props.userId && !id) {
-    //         props.history.push("/login") // я не понимаю что это
-    //     }
-    //     if (!id) {
-    //         navigate(`/profile/${props.userId}`) // из профиля своего не работает кнопка назад, т к она возвращается на profile/ а потом опять соответственно на /profile/мойайди
-    //     }
-    // }, [id])
+    const navigate = useNavigate()
+    useEffect(() => {
+        // if (id) {
+        //     props.getProfile(id)
+        //     props.getStatus(id)
+        // }
+        // if (!props.userId && !id) {
+        //     props.history.push("/login") // я не понимаю что это
+        // }
+        // if (!id) {
+        //     navigate(`/profile/${props.userId}`) // из профиля своего не работает кнопка назад, т к она возвращается на profile/ а потом опять соответственно на /profile/мойайди
+        // }
+    }, [id])
     return (
         <main>
             <ProfileInfo profile={props.profile}

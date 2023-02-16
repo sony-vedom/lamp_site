@@ -31,7 +31,7 @@ const authReducer = (state = initialState, action) => {
 
 
 export const setAuthUserData = (userId, email, name, isAuth) => {
-
+debugger
     return {
         type: SET_USER_DATA,
         payload: {userId, email, name, isAuth}

@@ -1,4 +1,4 @@
-import {getAuth, getRedirectResult, GoogleAuthProvider, signInWithRedirect} from "firebase/auth";
+import {getAuth, getRedirectResult, GoogleAuthProvider, signInWithRedirect, signOut} from "firebase/auth";
 import app from "../firebase";
 
 const authentication = {
@@ -17,6 +17,10 @@ const authentication = {
             }
         }
     },
+    mySingOut() {
+        return signOut(this.auth);
+    }
 }
+
 
 export default authentication;

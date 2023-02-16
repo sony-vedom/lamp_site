@@ -16,14 +16,14 @@
 
 .header h1 {
     font-family: "Shalimar", serif;
-    color: #e5d7a0;
+    color: #e8ae39;
 }
 
 
 .header img {
-    width: 60px;
+    padding: 3px 5px 0 0;
+    width: 35px;
     transform-origin: center;
-    transform: rotate(90deg);
 }
 
 .logo {
